@@ -646,7 +646,7 @@ class StableDiffusionPipeline(DiffusionPipeline):
             num_channels_latents,
             height,
             width,
-            prompt_embeds.dtype,
+            prompt_embeds[0].dtype,
             device,
             generator,
             latents,
@@ -693,7 +693,7 @@ class StableDiffusionPipeline(DiffusionPipeline):
             image = self.decode_latents(latents)
 
             # 9. Run safety checker
-            image, has_nsfw_concept = self.run_safety_checker(image, device, prompt_embeds.dtype)
+            image, has_nsfw_concept = self.run_safety_checker(image, device, prompt_embeds[0].dtype)
 
             # 10. Convert to PIL
             image = self.numpy_to_pil(image)
@@ -702,7 +702,7 @@ class StableDiffusionPipeline(DiffusionPipeline):
             image = self.decode_latents(latents)
 
             # 9. Run safety checker
-            image, has_nsfw_concept = self.run_safety_checker(image, device, prompt_embeds.dtype)
+            image, has_nsfw_concept = self.run_safety_checker(image, device, prompt_embeds[0].dtype)
 
         # Offload last model to CPU
         if hasattr(self, "final_offload_hook") and self.final_offload_hook is not None:
