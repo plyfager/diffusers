@@ -129,6 +129,7 @@ else:
         StableDiffusionModelEditingPipeline,
         StableDiffusionPanoramaPipeline,
         StableDiffusionPipeline,
+        StableDiffusionConsistencyPipeline,
         StableDiffusionPipelineSafe,
         StableDiffusionPix2PixZeroPipeline,
         StableDiffusionSAGPipeline,
