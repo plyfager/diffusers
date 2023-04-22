@@ -38,6 +38,26 @@ accelerate launch --mixed_precision="fp16"  train_text_to_image_consistency.py \
 
 I am currently training with this script, using 5-step Consistency Sampling. The intermediate results seem to be reasonable. 
 
+|    |    |    | 
+|----|----|----|
+| ![Cute Obama creature](https://user-images.githubusercontent.com/22982797/233788048-8fa2651e-9600-4a6d-800b-6ad6247c4bf8.png) | ![Hello Kitty_3](https://user-images.githubusercontent.com/22982797/233788050-5a468235-b389-4b06-8474-023cd7d13cbc.png) | ![Totoro_3](https://user-images.githubusercontent.com/22982797/233788051-b6f9f58e-6459-487b-a451-b0275700b264.png)|
+
+I believe further training and below ``TODO`` items may improve the image quality. 
+
+## Inference
+Images can be sampled using codes
+
+```python
+from diffusers import StableDiffusionConsistencyPipeline
+
+pipe = StableDiffusionConsistencyPipeline.from_pretrained("yangyfaker/sd-consistency-exp-pokemon")
+pipe.to("cuda")
+prompts = ["Cute Obama creature", "Totoro", "Hello Kitty"]
+for prompt in prompts:
+    image = pipe(prompt=prompt, num_inference_steps=10).images[0]
+    image.save(f"{prompt}.png")
+```
+
 ## TODO
 - [ ] set N(k)
 - [ ] support distillization
