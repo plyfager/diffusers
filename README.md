@@ -39,9 +39,9 @@ accelerate launch --mixed_precision="fp16"  train_text_to_image_consistency.py \
 I am currently training with this script, using 5-step Consistency Sampling. The intermediate results seem to be reasonable. 
 
 ## TODO
-- [] set N(k)
-- [] support distillization
-- [] align loss reweighting
-- [] select loss type: l1 and lpips?
-- [] align/adjust unet ema setting
-- [] align/adjust learning rate && Optimizer
+- [ ] set N(k)
+- [ ] support distillization
+- [ ] align loss reweighting
+- [ ] select loss type: l1 and lpips?
+- [ ] align/adjust unet ema setting
+- [ ] align/adjust learning rate && Optimizer
