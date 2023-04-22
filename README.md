@@ -59,9 +59,11 @@ for prompt in prompts:
 ```
 
 ## TODO
+
 - [ ] set N(k)
+- [ ] apply text dropout
 - [ ] support distillization
 - [ ] align loss reweighting
-- [ ] select loss type: l1 and lpips?
+- [ ] select loss type: l1 and lpips
 - [ ] align/adjust unet ema setting
 - [ ] align/adjust learning rate && Optimizer
