@@ -36,7 +36,7 @@ accelerate launch --mixed_precision="fp16"  train_text_to_image_consistency.py \
 
 ```
 
-I am currently training with this script, using 5-step Consistency Sampling. The intermediate results seem to be reasonable. 
+I am currently training with this script, using 5-step Consistency Sampling. The intermediate results(8500 steps) seem to be reasonable. 
 
 |    |    |    | 
 |----|----|----|
